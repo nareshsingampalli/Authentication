@@ -1,0 +1,684 @@
+2026-05-10 20:52:30,444 [INFO] Background token refresher started.
+2026-05-10 20:52:30,445 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 20:52:30,527 [INFO] Token for account_1 is still valid.
+2026-05-10 20:52:30,616 [INFO] Token for account_2 is still valid.
+2026-05-10 20:52:30,697 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 20:53:35] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:53:38] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 20:53:38,199 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-4 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 20:53:40] "GET / HTTP/1.0" 200 -
+2026-05-10 20:54:21,917 [INFO] Received auth code for account_3
+2026-05-10 20:54:22,043 [INFO] Token successfully updated for account_3
+127.0.0.1 - - [10/May/2026 20:54:22] "GET /?code=YpaMNJ&state=account_3 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:54:24] "GET / HTTP/1.0" 200 -
+2026-05-10 20:56:52,569 [INFO] Graceful shutdown initiated...
+2026-05-10 20:56:54,572 [INFO] Forcing exit...
+2026-05-10 20:56:54,689 [INFO] Background token refresher started.
+2026-05-10 20:56:54,690 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 20:56:54,783 [INFO] Token for account_1 is still valid.
+2026-05-10 20:56:54,874 [INFO] Token for account_2 is still valid.
+2026-05-10 20:56:54,954 [INFO] Token for account_3 is still valid.
+127.0.0.1 - - [10/May/2026 20:57:21] "GET / HTTP/1.0" 200 -
+2026-05-10 20:58:51,843 [INFO] Graceful shutdown initiated...
+2026-05-10 20:58:53,845 [INFO] Forcing exit...
+2026-05-10 20:58:53,972 [INFO] Background token refresher started.
+2026-05-10 20:58:53,973 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 20:58:54,070 [INFO] Token for account_1 is still valid.
+2026-05-10 20:58:54,152 [INFO] Token for account_2 is still valid.
+2026-05-10 20:58:54,232 [INFO] Token for account_3 is still valid.
+127.0.0.1 - - [10/May/2026 20:59:08] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:59:11] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:59:13] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:59:14] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 20:59:16] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:00:12] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:00:15] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:00:15,059 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-9 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:00:17] "GET / HTTP/1.0" 200 -
+2026-05-10 21:00:38,443 [INFO] Graceful shutdown initiated...
+2026-05-10 21:00:40,446 [INFO] Forcing exit...
+2026-05-10 21:00:40,562 [INFO] Background token refresher started.
+2026-05-10 21:00:40,564 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:00:40,674 [INFO] Token for account_1 is still valid.
+2026-05-10 21:00:40,768 [INFO] Token for account_2 is still valid.
+2026-05-10 21:00:40,843 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:00:55] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:00:59] "GET /?r=1778427059544 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:01:01] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:01:01,403 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-5 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:01:03] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:02:49] "GET / HTTP/1.0" 200 -
+2026-05-10 21:02:49,993 [INFO] Graceful shutdown initiated...
+2026-05-10 21:02:51,996 [INFO] Forcing exit...
+2026-05-10 21:02:52,115 [INFO] Background token refresher started.
+2026-05-10 21:02:52,116 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:02:52,197 [INFO] Token for account_1 is still valid.
+2026-05-10 21:02:52,289 [INFO] Token for account_2 is still valid.
+2026-05-10 21:02:52,372 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:02:59] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:03:33] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:05:04] "GET / HTTP/1.0" 200 -
+2026-05-10 21:08:46,268 [INFO] Graceful shutdown initiated...
+2026-05-10 21:08:48,270 [INFO] Forcing exit...
+2026-05-10 21:08:48,398 [INFO] Background token refresher started.
+2026-05-10 21:08:48,398 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:08:48,487 [INFO] Token for account_1 is still valid.
+2026-05-10 21:08:48,572 [INFO] Token for account_2 is still valid.
+2026-05-10 21:08:48,655 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:09:12] "GET / HTTP/1.0" 200 -
+2026-05-10 21:09:38,953 [INFO] Received auth code for account_3
+2026-05-10 21:09:39,075 [INFO] Token successfully updated for account_3
+127.0.0.1 - - [10/May/2026 21:09:39] "GET /?code=3o6W7t&state=account_3 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:09:41] "GET / HTTP/1.0" 200 -
+2026-05-10 21:11:25,459 [INFO] Graceful shutdown initiated...
+2026-05-10 21:11:27,462 [INFO] Forcing exit...
+2026-05-10 21:11:27,586 [INFO] Background token refresher started.
+2026-05-10 21:11:27,587 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:11:27,673 [INFO] Token for account_1 is still valid.
+2026-05-10 21:11:27,753 [INFO] Token for account_2 is still valid.
+2026-05-10 21:11:27,847 [INFO] Token for account_3 is still valid.
+127.0.0.1 - - [10/May/2026 21:13:30] "GET /?r=1778427810565 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:39:48] "GET /?r=1778427810565 HTTP/1.0" 200 -
+2026-05-10 21:40:15,493 [INFO] Received auth code for account_3
+2026-05-10 21:40:15,626 [INFO] Token successfully updated for account_3
+127.0.0.1 - - [10/May/2026 21:40:15] "GET /?code=DThB2F&state=account_3 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:40:18] "GET / HTTP/1.0" 200 -
+2026-05-10 21:40:38,223 [INFO] Graceful shutdown initiated...
+2026-05-10 21:40:40,225 [INFO] Forcing exit...
+2026-05-10 21:40:40,342 [INFO] Background token refresher started.
+2026-05-10 21:40:40,342 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:40:40,434 [INFO] Token for account_1 is still valid.
+2026-05-10 21:40:40,519 [INFO] Token for account_2 is still valid.
+2026-05-10 21:40:40,612 [INFO] Token for account_3 is still valid.
+127.0.0.1 - - [10/May/2026 21:40:46] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:40:49] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:40:49,729 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-4 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:40:52] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:41:12] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:41:16] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:41:16,533 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-8 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:41:18] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:41:24] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:41:24,423 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-11 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:41:26] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:41:34] "GET /?r=1778429494558 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:41:37] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:41:37,443 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-15 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:41:39] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:42:29] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:42:29,793 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-18 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Please install them with the following command:      ║
+║                                                      ║
+║     sudo playwright install-deps                     ║
+║                                                      ║
+║ Alternatively, use apt:                              ║
+║     sudo apt-get install libatk1.0-0\                ║
+║         libatk-bridge2.0-0\                          ║
+║         libcups2\                                    ║
+║         libxkbcommon0\                               ║
+║         libasound2\                                  ║
+║         libgbm1\                                     ║
+║         libxext6\                                    ║
+║         libcairo2\                                   ║
+║         libpango-1.0-0\                              ║
+║         libxcomposite1\                              ║
+║         libxdamage1\                                 ║
+║         libxfixes3\                                  ║
+║         libxrandr2\                                  ║
+║         libatspi2.0-0                                ║
+║                                                      ║
+║ <3 Playwright Team                                   ║
+╚══════════════════════════════════════════════════════╝
+127.0.0.1 - - [10/May/2026 21:42:32] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:44:29] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:44:31] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:44:31,834 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-22 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/ubuntu/.cache/ms-playwright/chromium-1217/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-FYmCaq --remote-debugging-pipe --no-startup-window
+  - <launched> pid=3433547
+  - [pid=3433547][err] [3433547:3433547:0510/214432.340643:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=3433547][err] [3433547:3433547:0510/214432.340869:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=3433547] <gracefully close start>
+  - [pid=3433547] <kill>
+  - [pid=3433547] <will force kill>
+  - [pid=3433547] <process did exit: exitCode=1, signal=null>
+  - [pid=3433547] starting temporary directories cleanup
+  - [pid=3433547] finished temporary directories cleanup
+  - [pid=3433547] <gracefully close end>
+
+127.0.0.1 - - [10/May/2026 21:44:34] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:45:46] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:45:50] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:45:50,018 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-26 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/ubuntu/.cache/ms-playwright/chromium-1217/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-3yx5Fi --remote-debugging-pipe --no-startup-window
+  - <launched> pid=3434547
+  - [pid=3434547][err] [3434547:3434547:0510/214550.405773:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=3434547][err] [3434547:3434547:0510/214550.405827:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=3434547] <gracefully close start>
+  - [pid=3434547] <kill>
+  - [pid=3434547] <will force kill>
+  - [pid=3434547] <process did exit: exitCode=1, signal=null>
+  - [pid=3434547] starting temporary directories cleanup
+  - [pid=3434547] finished temporary directories cleanup
+  - [pid=3434547] <gracefully close end>
+
+127.0.0.1 - - [10/May/2026 21:45:52] "GET / HTTP/1.0" 200 -
+2026-05-10 21:47:27,084 [INFO] Graceful shutdown initiated...
+2026-05-10 21:47:29,086 [INFO] Forcing exit...
+2026-05-10 21:47:29,211 [INFO] Background token refresher started.
+2026-05-10 21:47:29,212 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:47:29,302 [INFO] Token for account_1 is still valid.
+2026-05-10 21:47:29,380 [INFO] Token for account_2 is still valid.
+2026-05-10 21:47:29,456 [WARNING] Token for account_3 is invalid or expired.
+2026-05-10 21:48:14,154 [INFO] Graceful shutdown initiated...
+2026-05-10 21:48:16,156 [INFO] Forcing exit...
+2026-05-10 21:48:16,279 [INFO] Background token refresher started.
+2026-05-10 21:48:16,280 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:48:16,369 [INFO] Token for account_1 is still valid.
+2026-05-10 21:48:16,462 [INFO] Token for account_2 is still valid.
+2026-05-10 21:48:16,543 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:49:04] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:49:07] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:49:07,608 [INFO] Starting headless auto-login for account_3...
+Exception in thread Thread-4 (auto_login_headless):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ubuntu/authentication-app/auth_manager.py", line 167, in auto_login_headless
+    browser = p.chromium.launch(headless=False) 
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15118, in launch
+    self._sync(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_browser_type.py", line 98, in launch
+    await self._channel.send(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/home/ubuntu/test_app/venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Looks like you launched a headed browser without having a XServer running.                     ║
+║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║
+║                                                                                                ║
+║ <3 Playwright Team                                                                             ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+Call log:
+  - <launching> /home/ubuntu/.cache/ms-playwright/chromium-1217/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-TSZxy3 --remote-debugging-pipe --no-startup-window
+  - <launched> pid=3435492
+  - [pid=3435492][err] [3435492:3435492:0510/214908.000292:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:256] Missing X server or $DISPLAY
+  - [pid=3435492][err] [3435492:3435492:0510/214908.000350:ERROR:ui/aura/env.cc:246] The platform failed to initialize.  Exiting.
+  - [pid=3435492] <gracefully close start>
+  - [pid=3435492] <kill>
+  - [pid=3435492] <will force kill>
+  - [pid=3435492] <process did exit: exitCode=1, signal=null>
+  - [pid=3435492] starting temporary directories cleanup
+  - [pid=3435492] finished temporary directories cleanup
+  - [pid=3435492] <gracefully close end>
+
+127.0.0.1 - - [10/May/2026 21:49:09] "GET / HTTP/1.0" 200 -
+2026-05-10 21:51:39,848 [INFO] Graceful shutdown initiated...
+2026-05-10 21:51:41,850 [INFO] Forcing exit...
+2026-05-10 21:51:41,966 [INFO] Background token refresher started.
+2026-05-10 21:51:41,966 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:51:42,055 [INFO] Token for account_1 is still valid.
+2026-05-10 21:51:42,136 [INFO] Token for account_2 is still valid.
+2026-05-10 21:51:42,211 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:52:18] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:52:21] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:52:21,259 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:52:22,580 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:52:22,679 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:52:23] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:52:31] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:52:33] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:52:33,538 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:52:34,342 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:52:34,433 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:52:35] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:53:03] code 501, message Unsupported method ('HEAD')
+127.0.0.1 - - [10/May/2026 21:53:03] "HEAD /auto-login-trigger?account_id=account_3 HTTP/1.0" 501 -
+127.0.0.1 - - [10/May/2026 21:53:03] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:53:03,862 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:53:04,648 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:53:04,731 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:56:14] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:56:18] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:56:18,073 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:56:18,900 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:56:18,990 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:56:20] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:56:24] "GET /?r=1778430383982 HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:56:26] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:56:26,643 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:56:27,556 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:56:27,658 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:56:29] "GET / HTTP/1.0" 200 -
+2026-05-10 21:57:22,683 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 21:57:34,436 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 21:58:04,734 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Timeout 300000ms exceeded.
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 21:58:32,618 [INFO] Graceful shutdown initiated...
+2026-05-10 21:58:32,636 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 21:58:32,639 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 21:58:34,621 [INFO] Forcing exit...
+2026-05-10 21:58:34,740 [INFO] Background token refresher started.
+2026-05-10 21:58:34,741 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 21:58:34,826 [INFO] Token for account_1 is still valid.
+2026-05-10 21:58:34,915 [INFO] Token for account_2 is still valid.
+2026-05-10 21:58:34,990 [WARNING] Token for account_3 is invalid or expired.
+127.0.0.1 - - [10/May/2026 21:59:15] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [10/May/2026 21:59:17] "GET /auto-login-trigger?account_id=account_3 HTTP/1.0" 200 -
+2026-05-10 21:59:17,618 [INFO] Starting headless auto-login for account_3...
+2026-05-10 21:59:18,584 [INFO] Phone page detected. Entering phone number...
+2026-05-10 21:59:18,676 [INFO] Waiting for OTP entry...
+127.0.0.1 - - [10/May/2026 21:59:19] "GET / HTTP/1.0" 200 -
+2026-05-10 22:03:15,684 [INFO] Graceful shutdown initiated...
+2026-05-10 22:03:15,692 [ERROR] Auto-login failed for account_3: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 22:03:17,687 [INFO] Forcing exit...
+2026-05-10 22:03:17,806 [INFO] Background token refresher started.
+2026-05-10 22:03:17,808 [INFO] Auth Service running on http://127.0.0.1:8050
+2026-05-10 22:03:17,915 [INFO] Token for account_1 is still valid.
+2026-05-10 22:03:18,009 [INFO] Token for account_2 is still valid.
+2026-05-10 22:03:18,097 [WARNING] Token for account_3 is invalid or expired.
+2026-05-10 22:07:59,333 [INFO] Received auth code for account_3
+2026-05-10 22:07:59,470 [INFO] Token successfully updated for account_3
+127.0.0.1 - - [10/May/2026 22:07:59] "GET /oauth/callback?code=g1lYKN&state=account_3 HTTP/1.0" 200 -

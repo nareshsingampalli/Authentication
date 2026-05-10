@@ -1,0 +1,31 @@
+2026-05-10 22:27:33,567 [INFO] Background token refresher started.
+2026-05-10 22:27:34,519 [INFO] Token for account_1 is still valid.
+2026-05-10 22:27:34,845 [INFO] Auth Service running on http://127.0.0.1:8000
+2026-05-10 22:27:35,618 [WARNING] Token for account_2 is invalid or expired.
+2026-05-10 22:27:36,610 [WARNING] Token for account_3 is invalid or expired.
+2026-05-10 22:28:13,896 [INFO] Starting headless auto-login for account_2...
+2026-05-10 22:28:17,199 [INFO] Phone page detected. Entering phone number...
+2026-05-10 22:28:17,350 [INFO] Waiting for OTP entry...
+2026-05-10 22:28:55,980 [INFO] Starting headless auto-login for account_2...
+2026-05-10 22:28:59,155 [INFO] Phone page detected. Entering phone number...
+2026-05-10 22:28:59,332 [INFO] Waiting for OTP entry...
+2026-05-10 22:31:44,247 [INFO] Starting headless auto-login for account_2...
+2026-05-10 22:31:47,762 [INFO] Phone page detected. Entering phone number...
+2026-05-10 22:31:47,906 [INFO] Waiting for OTP entry...
+2026-05-10 22:32:39,015 [ERROR] Auto-login failed for account_2: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 22:32:52,943 [ERROR] Auto-login failed for account_2: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 22:32:56,188 [ERROR] Auto-login failed for account_2: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("input[type='password'], input#pinCode") to be visible
+
+2026-05-10 22:35:07,764 [INFO] Background token refresher started.
+2026-05-10 22:35:08,846 [INFO] Token for account_1 is still valid.
+2026-05-10 22:35:09,670 [INFO] Auth Service running on http://127.0.0.1:8000
+2026-05-10 22:35:09,879 [WARNING] Token for account_2 is invalid or expired.
+2026-05-10 22:35:10,994 [WARNING] Token for account_3 is invalid or expired.

@@ -10,6 +10,12 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
 from typing import Any, Dict, Optional, List
 from urllib.parse import parse_qs, urlparse
+import redis
+import jwt
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(
@@ -30,15 +36,118 @@ class UpstoxAuthManager:
         self.credentials = self._load_json(creds_file)
         self.tokens = self._load_json(tokens_file)
         
+        # Redis Connection
+        self.redis_host = os.getenv("REDIS_HOST", "140.245.8.242")
+        self.redis_port = int(os.getenv("REDIS_PORT", "6379"))
+        self.redis_password = os.getenv("REDIS_PASSWORD", "yourpassword123")
+        self.redis_client = None
+        
+        try:
+            self._client = .Redis(
+                host=self.redis_host,
+                port=self.redis_port,
+                password=self.redis_password,
+                decode_responses=True,
+                socket_timeout=5
+            )
+            self.redis_client.ping()
+            logger.info("Connected to Redis successfully.")
+            self.sync_tokens_to_redis()
+        except Exception as e:
+            logger.error(f"Failed to connect to Redis: {e}")
+        
         # Start background refresher
         self.stop_event = threading.Event()
         self.refresher_thread = threading.Thread(target=self._background_refresher, daemon=True)
         self.refresher_thread.start()
 
+        # Start background heartbeat lock reclaimer
+        self.reclaimer_thread = threading.Thread(target=self._background_lock_reclaimer, daemon=True)
+        self.reclaimer_thread.start()
+
         # OTP submission state (for headless browser waiting on VM)
         self.otp_events: Dict[str, threading.Event] = {}
         self.otp_values: Dict[str, str] = {}
         self.pending_otp_accounts: set = set()
+
+    def sync_tokens_to_redis(self):
+        if not self.redis_client:
+            return
+        try:
+            logger.info("Syncing tokens from tokens.json to Redis...")
+            active_account_ids = []
+            
+            for account_id in self.credentials:
+                token_data = self.tokens.get(account_id, {})
+                access_token = token_data.get("access_token")
+                
+                if access_token:
+                    expires_at = None
+                    try:
+                        decoded = jwt.decode(access_token, options={"verify_signature": False})
+                        expires_at = decoded.get("exp")
+                    except Exception as e:
+                        logger.warning(f"Failed to decode JWT for {account_id}: {e}")
+                    
+                    # Verify validity locally (token is active and not expired)
+                    is_valid = False
+                    if expires_at and expires_at > time.time():
+                        is_valid = True
+                        
+                    if is_valid:
+                        redis_data = {
+                            "access_token": access_token,
+                            "extended_token": token_data.get("extended_token", ""),
+                            "user_name": token_data.get("user_name", account_id),
+                            "user_id": token_data.get("user_id", ""),
+                            "broker": token_data.get("broker", "UPSTOX"),
+                            "email": token_data.get("email", ""),
+                            "timestamp": str(token_data.get("timestamp", time.time())),
+                            "expires_at": str(expires_at)
+                        }
+                        
+                        # Convert all values to strings for Redis hash
+                        self.redis_client.hset(f"token:{account_id}", mapping=redis_data)
+                        logger.info(f"Token saved to Redis for {account_id} (Expires at: {expires_at})")
+                        active_account_ids.append(account_id)
+                    else:
+                        logger.warning(f"Token for {account_id} is expired or invalid. Clearing from Redis if exists.")
+                        # Clean up stale/expired token details if any exist in Redis
+                        self.redis_client.delete(f"token:{account_id}")
+                        self.redis_client.lrem("available_tokens", 0, account_id)
+                        self.redis_client.srem("tokens_in_use", account_id)
+            
+            # Check what is currently in available_tokens and tokens_in_use
+            current_queue = self.redis_client.lrange("available_tokens", 0, -1)
+            current_in_use = self.redis_client.smembers("tokens_in_use")
+            
+            # Reset queue if empty to ensure self-healing pool
+            if not current_queue and not current_in_use:
+                logger.info("Redis token queue is empty. Initializing available_tokens pool...")
+                for acc_id in active_account_ids:
+                    self.redis_client.lpush("available_tokens", acc_id)
+                    logger.info(f"Initialized available_tokens pool with '{acc_id}'")
+            else:
+                # Top up active tokens not in queue and not in use
+                for acc_id in active_account_ids:
+                    if acc_id not in current_queue and acc_id not in current_in_use:
+                        self.redis_client.lpush("available_tokens", acc_id)
+                        logger.info(f"Added '{acc_id}' to Redis available_tokens queue.")
+        except Exception as e:
+            logger.error(f"Error syncing tokens to Redis: {e}")
+
+    def is_token_expired_soon(self, token: str, buffer_seconds: int = 300) -> bool:
+        if not token:
+            return True
+        try:
+            decoded = jwt.decode(token, options={"verify_signature": False})
+            exp = decoded.get("exp")
+            if not exp:
+                return True
+            return (exp - time.time()) < buffer_seconds
+        except Exception as e:
+            logger.error(f"Error decoding token for expiry: {e}")
+            return True
 
     def _load_json(self, filepath: str) -> Dict[str, Any]:
         with self.file_lock:
@@ -83,11 +192,26 @@ class UpstoxAuthManager:
         token_data = self.tokens.get(account_id, {})
         access_token = token_data.get("access_token")
         
+        # Proactively check JWT expiry locally first to avoid broker API overhead
+        if access_token and not self.is_token_expired_soon(access_token, buffer_seconds=300):
+            logger.info(f"Token for {account_id} is still valid (checked locally).")
+            return True
+            
+        # Fallback to API verification
         if self.is_token_valid(access_token):
-            logger.info(f"Token for {account_id} is still valid.")
+            logger.info(f"Token for {account_id} is still valid (verified via API).")
             return True
         else:
-            logger.warning(f"Token for {account_id} is invalid or expired.")
+            logger.warning(f"Token for {account_id} is invalid or expired. Removing from Redis.")
+            # Clean up expired token from Redis
+            if self.redis_client:
+                try:
+                    self.redis_client.delete(f"token:{account_id}")
+                    self.redis_client.lrem("available_tokens", 0, account_id)
+                    self.redis_client.srem("tokens_in_use", account_id)
+                    logger.info(f"Cleared expired token for {account_id} from Redis.")
+                except Exception as re:
+                    logger.error(f"Failed to clear expired token from Redis: {re}")
             return False
 
     def get_all_tokens_status(self) -> Dict[str, str]:
@@ -97,19 +221,68 @@ class UpstoxAuthManager:
             access_token = token_data.get("access_token")
             if not access_token:
                 status[acc_id] = "Missing"
+                if self.redis_client:
+                    self.redis_client.delete(f"token:{acc_id}")
+                    self.redis_client.lrem("available_tokens", 0, acc_id)
+                    self.redis_client.srem("tokens_in_use", acc_id)
+            elif not self.is_token_expired_soon(access_token, buffer_seconds=300):
+                status[acc_id] = "Valid"
             elif self.is_token_valid(access_token):
                 status[acc_id] = "Valid"
             else:
                 status[acc_id] = "Expired"
+                if self.redis_client:
+                    try:
+                        self.redis_client.delete(f"token:{acc_id}")
+                        self.redis_client.lrem("available_tokens", 0, acc_id)
+                        self.redis_client.srem("tokens_in_use", acc_id)
+                        logger.info(f"Cleared expired token for {acc_id} from Redis during status check.")
+                    except Exception as re:
+                        logger.error(f"Failed to clear expired token from Redis during status check: {re}")
         return status
 
     def _background_refresher(self):
         logger.info("Background token refresher started.")
         while not self.stop_event.is_set():
-            # Check every hour
+            # Check every 5 minutes (300 seconds)
             for account_id in list(self.credentials.keys()):
-                self.refresh_token(account_id)
-            self.stop_event.wait(3600)
+                token_data = self.tokens.get(account_id, {})
+                access_token = token_data.get("access_token")
+                
+                # Warn and perform active validation if expiring in under 15 minutes
+                if not access_token or self.is_token_expired_soon(access_token, buffer_seconds=900):
+                    logger.warning(f"Token for {account_id} is missing, expired, or expiring within 15 minutes!")
+                    self.refresh_token(account_id)
+                else:
+                    logger.info(f"Token for {account_id} is healthy (verified locally).")
+            self.stop_event.wait(300)
+
+    def _background_lock_reclaimer(self):
+        logger.info("Background heartbeat lock reclaimer started.")
+        while not self.stop_event.is_set():
+            if self.redis_client:
+                try:
+                    # Get all currently marked in-use tokens in Redis
+                    in_use_accounts = self.redis_client.smembers("tokens_in_use")
+                    for account_id in in_use_accounts:
+                        # Check if heartbeat key exists
+                        hb_exists = self.redis_client.exists(f"token_heartbeat:{account_id}")
+                        if not hb_exists:
+                            logger.warning(f"⚠️ Stale lock detected for {account_id}! Heartbeat key 'token_heartbeat:{account_id}' does not exist (app likely hard-killed). Reclaiming token...")
+                            
+                            # Remove from tokens_in_use
+                            self.redis_client.srem("tokens_in_use", account_id)
+                            
+                            # To avoid duplicate entries in queue, verify it is not already in queue
+                            current_queue = self.redis_client.lrange("available_tokens", 0, -1)
+                            if account_id not in current_queue:
+                                self.redis_client.lpush("available_tokens", account_id)
+                                logger.info(f"♻️ Reclaimed token for '{account_id}' and pushed it back to available_tokens queue.")
+                            else:
+                                logger.info(f"Token '{account_id}' was already in available_tokens queue.")
+                except Exception as e:
+                    logger.error(f"Error in lock reclaimer: {e}")
+            self.stop_event.wait(15)  # Sweep every 15 seconds
 
     def wait_for_otp(self, account_id: str, timeout: int = 300) -> Optional[str]:
         """Block until OTP is submitted via the dashboard, or timeout."""
@@ -173,6 +346,51 @@ class UpstoxAuthManager:
                 }
                 self._save_json(self.tokens_file, self.tokens)
                 logger.info(f"Token successfully updated for {account_id}")
+                
+                 # Save and publish to Redis
+                if self.redis_client:
+                    try:
+                        expires_at = None
+                        try:
+                            decoded = jwt.decode(data['access_token'], options={"verify_signature": False})
+                            expires_at = decoded.get("exp")
+                        except Exception as je:
+                            logger.warning(f"Failed to decode JWT for {account_id}: {je}")
+
+                        # Check validity before pushing to Redis
+                        is_valid = False
+                        if expires_at and expires_at > time.time():
+                            if self.is_token_valid(data['access_token']):
+                                is_valid = True
+                        
+                        if is_valid:
+                            redis_data = {
+                                "access_token": data['access_token'],
+                                "extended_token": data.get('extended_token', ''),
+                                "user_name": data.get('user_name', account_id),
+                                "user_id": data.get('user_id', ''),
+                                "broker": "UPSTOX",
+                                "timestamp": str(time.time()),
+                                "expires_at": str(expires_at or 0)
+                            }
+                            self.redis_client.hset(f"token:{account_id}", mapping=redis_data)
+                            
+                            # Publish update
+                            self.redis_client.publish(f"token_updates:{account_id}", json.dumps({"access_token": data['access_token']}))
+                            
+                            # Add to available queue if not in queue and not in use
+                            current_queue = self.redis_client.lrange("available_tokens", 0, -1)
+                            current_in_use = self.redis_client.smembers("tokens_in_use")
+                            if account_id not in current_queue and account_id not in current_in_use:
+                                self.redis_client.lpush("available_tokens", account_id)
+                                logger.info(f"Pushed '{account_id}' to available_tokens queue.")
+                                
+                            logger.info(f"Redis updated and published for {account_id}")
+                        else:
+                            logger.error(f"Newly acquired token for {account_id} is invalid or expired. Skipping Redis push.")
+                    except Exception as re:
+                        logger.error(f"Failed to update Redis: {re}")
+                
                 return data['access_token']
             else:
                 logger.error(f"Failed to exchange code for {account_id}: {response.text}")
@@ -351,12 +569,50 @@ class AuthHandler(BaseHTTPRequestHandler):
         # 2. Handle Dashboard
         if parsed.path == "/" or parsed.path == "":
             status = self.server.manager.get_all_tokens_status()
+            has_valid_token = any(s == "Valid" for s in status.values())
+            
+            # Read next_url from query parameter or cookie
+            next_url = params.get('next', [None])[0]
+            cookie_header = self.headers.get('Cookie', '')
+            cookie_next = None
+            if cookie_header:
+                from http.cookies import SimpleCookie
+                try:
+                    cookie = SimpleCookie(cookie_header)
+                    if 'next_url' in cookie:
+                        cookie_next = cookie['next_url'].value
+                except Exception as ce:
+                    logger.error(f"Error parsing cookies: {ce}")
+            
+            target_next = next_url or cookie_next
+            
+            if has_valid_token and target_next:
+                from urllib.parse import urlparse as ul_urlparse, urlunparse as ul_urlunparse, parse_qsl as ul_parse_qsl, urlencode as ul_urlencode
+                try:
+                    u = ul_urlparse(target_next)
+                    q = ul_parse_qsl(u.query)
+                    q = [item for item in q if item[0] != 'auth_checked']
+                    q.append(('auth_checked', 'true'))
+                    new_query = ul_urlencode(q)
+                    redirect_url = ul_urlunparse((u.scheme, u.netloc, u.path, u.params, new_query, u.fragment))
+                    
+                    logger.info(f"Redirecting user to next page: {redirect_url}")
+                    self.send_response(302)
+                    self.send_header("Location", redirect_url)
+                    self.send_header("Set-Cookie", "next_url=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax")
+                    self.end_headers()
+                    return
+                except Exception as ex:
+                    logger.error(f"Error redirecting to next_url: {ex}")
+            
             accounts = self.server.manager.credentials
             html = self._generate_ui(accounts, status)
             self.send_response(200)
             self.send_header("Content-type", "text/html; charset=utf-8")
             self.send_header("Cache-Control", "no-store, no-cache, must-revalidate")
             self.send_header("Pragma", "no-cache")
+            if next_url:
+                self.send_header("Set-Cookie", f"next_url={next_url}; Path=/; HttpOnly; SameSite=Lax")
             self.end_headers()
             self.wfile.write(html.encode())
             

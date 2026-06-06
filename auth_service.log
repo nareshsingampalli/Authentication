@@ -29,3 +29,441 @@ Call log:
 2026-05-10 22:35:09,670 [INFO] Auth Service running on http://127.0.0.1:8000
 2026-05-10 22:35:09,879 [WARNING] Token for account_2 is invalid or expired.
 2026-05-10 22:35:10,994 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:17:59,919 [INFO] Connected to Redis successfully.
+2026-05-17 15:17:59,919 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:17:59,990 [INFO] Token saved to Redis for account_1 (Expires at: 1778450400)
+2026-05-17 15:18:00,082 [INFO] Token saved to Redis for account_2 (Expires at: 1778450400)
+2026-05-17 15:18:00,153 [INFO] Token saved to Redis for account_3 (Expires at: 1778450400)
+2026-05-17 15:18:00,301 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 15:18:00,305 [INFO] Background token refresher started.
+2026-05-17 15:18:00,305 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:18:00,826 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:18:00,827 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:26:43,635 [INFO] Connected to Redis successfully.
+2026-05-17 15:26:43,635 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:26:43,713 [INFO] Token saved to Redis for account_1 (Expires at: 1778450400)
+2026-05-17 15:26:43,781 [INFO] Token saved to Redis for account_2 (Expires at: 1778450400)
+2026-05-17 15:26:43,843 [INFO] Token saved to Redis for account_3 (Expires at: 1778450400)
+2026-05-17 15:26:43,973 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 15:26:43,974 [INFO] Background token refresher started.
+2026-05-17 15:26:43,976 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:26:43,993 [INFO] Auth Service running on http://127.0.0.1:8000
+2026-05-17 15:26:45,437 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:26:45,443 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:26:45,654 [WARNING] Token for account_2 is invalid or expired.
+2026-05-17 15:26:45,654 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:26:45,916 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:28:20,619 [INFO] Connected to Redis successfully.
+2026-05-17 15:28:20,635 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:28:20,717 [INFO] Token saved to Redis for account_1 (Expires at: 1778450400)
+2026-05-17 15:28:20,801 [INFO] Token saved to Redis for account_2 (Expires at: 1778450400)
+2026-05-17 15:28:20,874 [INFO] Token saved to Redis for account_3 (Expires at: 1778450400)
+2026-05-17 15:28:21,058 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 15:28:21,063 [INFO] Background token refresher started.
+2026-05-17 15:28:21,063 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:28:21,112 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 15:28:21,411 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:28:21,412 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:28:21,710 [WARNING] Token for account_2 is invalid or expired.
+2026-05-17 15:28:21,712 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:28:22,000 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:32:45,919 [INFO] Graceful shutdown initiated...
+2026-05-17 15:32:47,922 [INFO] Forcing exit...
+2026-05-17 15:33:01,969 [INFO] Connected to Redis successfully.
+2026-05-17 15:33:01,970 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:33:02,050 [INFO] Token saved to Redis for account_1 (Expires at: 1778450400)
+2026-05-17 15:33:02,119 [INFO] Token saved to Redis for account_2 (Expires at: 1778450400)
+2026-05-17 15:33:02,202 [INFO] Token saved to Redis for account_3 (Expires at: 1778450400)
+2026-05-17 15:33:02,329 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 15:33:02,330 [INFO] Background token refresher started.
+2026-05-17 15:33:02,332 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:33:02,345 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 15:33:02,685 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:33:02,687 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:33:03,073 [WARNING] Token for account_2 is invalid or expired.
+2026-05-17 15:33:03,073 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:33:03,354 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:38:03,359 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:38:03,804 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:38:03,804 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:38:04,135 [WARNING] Token for account_2 is invalid or expired.
+2026-05-17 15:38:04,137 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:38:04,449 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:38:53,851 [INFO] Graceful shutdown initiated...
+2026-05-17 15:38:55,853 [INFO] Forcing exit...
+2026-05-17 15:39:02,724 [INFO] Connected to Redis successfully.
+2026-05-17 15:39:02,735 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:39:02,869 [INFO] Token saved to Redis for account_1 (Expires at: 1778450400)
+2026-05-17 15:39:03,179 [INFO] Token saved to Redis for account_2 (Expires at: 1778450400)
+2026-05-17 15:39:03,315 [INFO] Token saved to Redis for account_3 (Expires at: 1778450400)
+2026-05-17 15:39:03,520 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 15:39:03,524 [INFO] Background token refresher started.
+2026-05-17 15:39:03,533 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:03,544 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 15:39:03,983 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:39:03,983 [WARNING] Token for account_2 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:04,272 [WARNING] Token for account_2 is invalid or expired.
+2026-05-17 15:39:04,273 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:04,623 [WARNING] Token for account_3 is invalid or expired.
+2026-05-17 15:39:04,624 [WARNING] Token for account_4 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:04,624 [WARNING] Token for account_4 is invalid or expired.
+2026-05-17 15:39:04,625 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:04,625 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 15:39:04,625 [WARNING] Token for account_6 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:39:04,625 [WARNING] Token for account_6 is invalid or expired.
+2026-05-17 15:40:19,446 [INFO] Received auth code for account_6
+2026-05-17 15:40:19,797 [INFO] Token successfully updated for account_6
+2026-05-17 15:40:20,318 [INFO] Pushed 'account_6' to available_tokens queue.
+2026-05-17 15:40:20,320 [INFO] Redis updated and published for account_6
+2026-05-17 15:41:25,005 [INFO] Received auth code for account_2
+2026-05-17 15:41:25,386 [INFO] Token successfully updated for account_2
+2026-05-17 15:41:25,730 [INFO] Pushed 'account_2' to available_tokens queue.
+2026-05-17 15:41:25,733 [INFO] Redis updated and published for account_2
+2026-05-17 15:41:48,795 [INFO] Received auth code for account_3
+2026-05-17 15:41:49,112 [INFO] Token successfully updated for account_3
+2026-05-17 15:41:49,467 [INFO] Pushed 'account_3' to available_tokens queue.
+2026-05-17 15:41:49,470 [INFO] Redis updated and published for account_3
+2026-05-17 15:42:06,799 [INFO] Received auth code for account_4
+2026-05-17 15:42:07,112 [INFO] Token successfully updated for account_4
+2026-05-17 15:42:07,490 [INFO] Pushed 'account_4' to available_tokens queue.
+2026-05-17 15:42:07,491 [INFO] Redis updated and published for account_4
+2026-05-17 15:44:04,631 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:44:05,443 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:44:05,444 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 15:44:05,445 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 15:44:05,446 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 15:44:05,446 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:44:05,448 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 15:44:05,449 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 15:49:05,462 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:49:05,960 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:49:05,960 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 15:49:05,962 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 15:49:05,964 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 15:49:05,965 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:49:05,966 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 15:49:05,967 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 15:50:48,179 [INFO] Connected to Redis successfully.
+2026-05-17 15:50:48,181 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 15:50:48,182 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 15:50:48,468 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 15:50:48,538 [INFO] Token saved to Redis for account_3 (Expires at: 1779055200)
+2026-05-17 15:50:48,606 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 15:50:48,663 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 15:50:48,768 [INFO] Background token refresher started.
+2026-05-17 15:50:48,771 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:54:05,976 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:54:06,516 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:54:06,517 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 15:54:06,519 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 15:54:06,521 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 15:54:06,522 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:54:06,526 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 15:54:06,528 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 15:59:06,536 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:59:07,351 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 15:59:07,351 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 15:59:07,351 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 15:59:07,356 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 15:59:07,356 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 15:59:07,359 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 15:59:07,360 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:04:38,718 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:04:39,267 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 16:04:39,269 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:04:39,269 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 16:04:39,270 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:04:39,270 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:04:39,270 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 16:04:39,270 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:09:39,279 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:09:39,729 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 16:09:39,730 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:09:39,730 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 16:09:39,731 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:09:39,731 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:09:39,732 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 16:09:39,733 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:14:39,756 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:14:40,019 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 16:14:40,021 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:14:40,021 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 16:14:40,022 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:14:40,024 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:14:40,024 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 16:14:40,028 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:19:40,043 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:19:41,633 [WARNING] Token for account_1 is invalid or expired.
+2026-05-17 16:19:41,633 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:19:41,634 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 16:19:41,634 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:19:41,634 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:19:41,634 [WARNING] Token for account_5 is invalid or expired.
+2026-05-17 16:19:41,635 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:31:51,662 [INFO] Connected to Redis successfully.
+2026-05-17 16:31:51,662 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:31:51,663 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:31:51,914 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:31:52,019 [INFO] Token saved to Redis for account_3 (Expires at: 1779055200)
+2026-05-17 16:31:52,102 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:31:52,177 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:31:52,308 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 16:31:52,373 [INFO] Initialized available_tokens pool with 'account_2'
+2026-05-17 16:31:52,431 [INFO] Initialized available_tokens pool with 'account_3'
+2026-05-17 16:31:52,501 [INFO] Initialized available_tokens pool with 'account_4'
+2026-05-17 16:31:52,552 [INFO] Initialized available_tokens pool with 'account_6'
+2026-05-17 16:31:52,556 [INFO] Background token refresher started.
+2026-05-17 16:31:52,557 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:35:22,662 [INFO] Connected to Redis successfully.
+2026-05-17 16:35:22,662 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:35:22,666 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:35:22,931 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:35:22,989 [INFO] Token saved to Redis for account_3 (Expires at: 1779055200)
+2026-05-17 16:35:23,070 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:35:23,127 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:35:23,259 [INFO] Background token refresher started.
+2026-05-17 16:35:23,261 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:35:23,273 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 16:35:23,695 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 16:35:23,897 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 16:35:23,897 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:35:23,897 [INFO] Token for account_3 is healthy (verified locally).
+2026-05-17 16:35:23,897 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:35:23,897 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:35:23,897 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 16:35:24,109 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 16:35:24,111 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:38:22,949 [INFO] Connected to Redis successfully.
+2026-05-17 16:38:22,949 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:38:22,952 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:38:23,223 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:38:23,286 [INFO] Token saved to Redis for account_3 (Expires at: 1779055200)
+2026-05-17 16:38:23,353 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:38:23,412 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:38:23,509 [INFO] Redis token queue is empty. Initializing available_tokens pool...
+2026-05-17 16:38:23,559 [INFO] Initialized available_tokens pool with 'account_2'
+2026-05-17 16:38:23,617 [INFO] Initialized available_tokens pool with 'account_3'
+2026-05-17 16:38:23,670 [INFO] Initialized available_tokens pool with 'account_4'
+2026-05-17 16:38:23,718 [INFO] Initialized available_tokens pool with 'account_6'
+2026-05-17 16:38:23,720 [INFO] Background token refresher started.
+2026-05-17 16:39:45,338 [INFO] Connected to Redis successfully.
+2026-05-17 16:39:45,338 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:39:45,339 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:39:45,548 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:39:45,598 [INFO] Token saved to Redis for account_3 (Expires at: 1779055200)
+2026-05-17 16:39:45,663 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:39:45,720 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:39:45,823 [INFO] Background token refresher started.
+2026-05-17 16:39:56,092 [INFO] Connected to Redis successfully.
+2026-05-17 16:39:56,092 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:39:56,093 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:39:56,361 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:39:56,361 [WARNING] Failed to decode JWT for account_3: Not enough segments
+2026-05-17 16:39:56,361 [WARNING] Token for account_3 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:39:56,609 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:39:56,674 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:39:56,798 [INFO] Background token refresher started.
+2026-05-17 16:39:56,798 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:56:36,688 [INFO] Connected to Redis successfully.
+2026-05-17 16:56:36,689 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:56:36,689 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:56:36,970 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:56:36,970 [WARNING] Failed to decode JWT for account_3: Not enough segments
+2026-05-17 16:56:36,970 [WARNING] Token for account_3 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:56:37,223 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:56:37,309 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:56:37,467 [INFO] Background token refresher started.
+2026-05-17 16:56:37,467 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:56:37,477 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 16:56:38,017 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 16:56:38,307 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 16:56:38,307 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:56:38,307 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 16:56:38,307 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:56:38,307 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 16:56:38,578 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 16:56:38,789 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 16:56:38,792 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:56:38,792 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:56:38,792 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 16:56:38,990 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 16:56:38,990 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:58:45,773 [INFO] Connected to Redis successfully.
+2026-05-17 16:58:45,773 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 16:58:45,774 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:58:46,094 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 16:58:46,094 [WARNING] Failed to decode JWT for account_3: Not enough segments
+2026-05-17 16:58:46,094 [WARNING] Token for account_3 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 16:58:46,375 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 16:58:46,454 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 16:58:46,582 [INFO] Background token refresher started.
+2026-05-17 16:58:46,582 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:58:46,600 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 16:58:46,852 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 16:58:47,094 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 16:58:47,095 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 16:58:47,096 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 16:58:47,096 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:58:47,097 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 16:58:47,340 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 16:58:47,576 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 16:58:47,576 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 16:58:47,576 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 16:58:47,577 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 16:58:47,826 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 16:58:47,826 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 16:59:19,691 [INFO] Cleared expired token for account_1 from Redis during status check.
+2026-05-17 16:59:19,691 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 16:59:20,129 [INFO] Cleared expired token for account_3 from Redis during status check.
+2026-05-17 17:00:31,027 [INFO] Connected to Redis successfully.
+2026-05-17 17:00:31,027 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 17:00:31,030 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 17:00:31,288 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 17:00:31,288 [WARNING] Failed to decode JWT for account_3: Not enough segments
+2026-05-17 17:00:31,288 [WARNING] Token for account_3 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 17:00:31,530 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 17:00:31,583 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 17:00:31,745 [INFO] Background token refresher started.
+2026-05-17 17:00:31,746 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:00:31,763 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 17:00:31,962 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:00:32,162 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:00:32,162 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:00:32,162 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:00:32,162 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:00:32,162 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:00:32,467 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:00:32,730 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:00:32,730 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:00:32,730 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:00:32,730 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:00:32,935 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:00:32,935 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:03:47,829 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:03:48,112 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:03:48,302 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:03:48,302 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:03:48,302 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:03:48,302 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:03:48,302 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:03:48,567 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:03:48,791 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:03:48,792 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:03:48,792 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:03:48,792 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:03:49,006 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:03:49,007 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:05:32,939 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:05:33,176 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:05:33,370 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:05:33,370 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:05:33,370 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:05:33,371 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:05:33,371 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:05:33,785 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:05:33,973 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:05:33,973 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:05:33,973 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:05:33,974 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:05:34,182 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:05:34,182 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:08:08,288 [INFO] Graceful shutdown initiated...
+2026-05-17 17:08:10,289 [INFO] Forcing exit...
+2026-05-17 17:14:32,050 [INFO] Connected to Redis successfully.
+2026-05-17 17:14:32,050 [INFO] Syncing tokens from tokens.json to Redis...
+2026-05-17 17:14:32,050 [WARNING] Token for account_1 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 17:14:32,350 [INFO] Token saved to Redis for account_2 (Expires at: 1779055200)
+2026-05-17 17:14:32,357 [WARNING] Failed to decode JWT for account_3: Not enough segments
+2026-05-17 17:14:32,357 [WARNING] Token for account_3 is expired or invalid. Clearing from Redis if exists.
+2026-05-17 17:14:32,642 [INFO] Token saved to Redis for account_4 (Expires at: 1779055200)
+2026-05-17 17:14:32,759 [INFO] Token saved to Redis for account_6 (Expires at: 1779055200)
+2026-05-17 17:14:32,900 [INFO] Background token refresher started.
+2026-05-17 17:14:32,900 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:14:32,902 [INFO] Background heartbeat lock reclaimer started.
+2026-05-17 17:14:32,913 [INFO] Auth Service running on http://127.0.0.1:8010
+2026-05-17 17:14:33,424 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:14:33,644 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:14:33,645 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:14:33,645 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:14:33,646 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:14:33,646 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:14:33,919 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:14:34,145 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:14:34,145 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:14:34,145 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:14:34,147 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:14:34,362 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:14:34,362 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:15:35,414 [INFO] Cleared expired token for account_1 from Redis during status check.
+2026-05-17 17:15:35,414 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:15:35,990 [INFO] Cleared expired token for account_3 from Redis during status check.
+2026-05-17 17:19:34,373 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:19:34,800 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:19:35,025 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:19:35,026 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:19:35,026 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:19:35,026 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:19:35,026 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:19:37,917 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:19:38,131 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:19:38,131 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:19:38,131 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:19:38,131 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:19:38,374 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:19:38,374 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:24:38,378 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:24:38,815 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:24:39,071 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:24:39,072 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:24:39,072 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:24:39,072 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:24:39,073 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:24:39,335 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:24:40,450 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:24:40,451 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:24:40,451 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:24:40,451 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:24:41,747 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:24:41,748 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:29:41,753 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:29:42,126 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:29:42,312 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:29:42,312 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:29:42,314 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:29:42,314 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:29:42,314 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:29:42,605 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:29:42,892 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:29:42,892 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:29:42,892 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:29:42,892 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:29:43,131 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:29:43,131 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:34:43,146 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:34:43,618 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:34:43,811 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:34:43,811 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:34:43,812 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:34:43,812 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:34:43,812 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:34:44,085 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:34:44,304 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:34:44,304 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:34:44,304 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:34:44,304 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:34:44,483 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:34:44,484 [INFO] Token for account_6 is healthy (verified locally).
+2026-05-17 17:39:44,497 [WARNING] Token for account_1 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:39:47,927 [WARNING] Token for account_1 is invalid or expired. Removing from Redis.
+2026-05-17 17:39:48,131 [INFO] Cleared expired token for account_1 from Redis.
+2026-05-17 17:39:48,131 [INFO] Token for account_2 is healthy (verified locally).
+2026-05-17 17:39:48,131 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:39:48,131 [WARNING] Token for account_3 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:39:48,131 [ERROR] Error decoding token for expiry: Not enough segments
+2026-05-17 17:39:48,405 [WARNING] Token for account_3 is invalid or expired. Removing from Redis.
+2026-05-17 17:39:48,573 [INFO] Cleared expired token for account_3 from Redis.
+2026-05-17 17:39:48,573 [INFO] Token for account_4 is healthy (verified locally).
+2026-05-17 17:39:48,573 [WARNING] Token for account_5 is missing, expired, or expiring within 15 minutes!
+2026-05-17 17:39:48,573 [WARNING] Token for account_5 is invalid or expired. Removing from Redis.
+2026-05-17 17:39:48,773 [INFO] Cleared expired token for account_5 from Redis.
+2026-05-17 17:39:48,773 [INFO] Token for account_6 is healthy (verified locally).

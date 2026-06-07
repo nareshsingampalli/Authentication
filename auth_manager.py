@@ -848,6 +848,12 @@ class AuthHandler(BaseHTTPRequestHandler):
             is_valid = s == "Valid"
             status_class = "status-valid" if is_valid else "status-expired" if s == "Expired" else "status-unknown"
             
+            phone_val = accounts[acc_id].get('phone', '')
+            if phone_val and phone_val != '---':
+                display_phone = phone_val[:2] + '*' * (len(phone_val) - 2) if len(phone_val) > 2 else phone_val
+            else:
+                display_phone = '---'
+            
             cards += f"""
             <div class="card">
                 <div class="card-header">
@@ -856,7 +862,7 @@ class AuthHandler(BaseHTTPRequestHandler):
                 </div>
                 <div class="card-body">
                     <div class="info-row"><span>API Key</span><code>{accounts[acc_id]['api_key'][:12]}...</code></div>
-                    <div class="info-row"><span>Phone</span><code>{accounts[acc_id].get('phone', '---')}</code></div>
+                    <div class="info-row"><span>Phone</span><code>{display_phone}</code></div>
                     <div class="info-row"><span>PIN</span><code>{"● ● ● ● ● ●" if accounts[acc_id].get('pin') else "Not Set"}</code></div>
                     <div class="card-actions">
                         <button onclick="startAuth('{acc_id}', '{accounts[acc_id]['api_key']}', '{accounts[acc_id]['redirect_uri']}')" class="btn btn-primary">Manual Auth</button>

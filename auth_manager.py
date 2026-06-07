@@ -43,7 +43,7 @@ class UpstoxAuthManager:
         self.redis_client = None
         
         try:
-            self._client = .Redis(
+            self.redis_client = redis.Redis(
                 host=self.redis_host,
                 port=self.redis_port,
                 password=self.redis_password,
